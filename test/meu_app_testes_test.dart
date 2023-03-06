@@ -1,3 +1,5 @@
+import 'dart:js_util';
+
 import 'package:meu_app_testes/meu_app_testes.dart' as app;
 import 'package:test/test.dart';
 
@@ -54,5 +56,25 @@ void main() {
             throwsA(TypeMatcher<ArgumentError>()));
       });
     }
+  });
+
+  test('Testar conversão para uppercase', () {
+    expect(app.convertToUpper("dio"), equals("DIO"));
+  });
+
+  test('Testar conversão para uppercase teste 2', () {
+    expect(app.convertToUpper("dio"), equalsIgnoringCase("dio"));
+  });
+
+  test('Valor maior que 50', () {
+    expect(app.retornaValor(50), greaterThanOrEqualTo(50));
+  });
+
+  test('Começa com', () {
+    expect(app.convertToUpper("dio"), startsWith("D"));
+  });
+
+  test('Valor diferente', () {
+    expect(app.retornaValor(50), isNot(equals(49)));
   });
 }
