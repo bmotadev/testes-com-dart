@@ -1,3 +1,7 @@
-int calculate() {
-  return 6 * 7;
+double calcularDesconto(double valor, double desconto, bool percentual) {
+  if (percentual) {
+    return valor - ((valor * desconto) / 100);
+  } else {
+    return valor - desconto;
+  }
 }
